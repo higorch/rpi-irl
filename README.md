@@ -1,5 +1,1 @@
-ffmpeg -f v4l2 -input_format mjpeg -video_size 1280x720 -framerate 30 -i /dev/video0 \
--f alsa -channels 1 -i hw:3,0 \
--c:v libx264 -preset ultrafast -b:v 2500k -g 60 \
--c:a aac -b:a 128k -ac 1 \
--f mpegts "srt://IP_DA_VPS:8890?mode=caller&streamid=publish:irl"
+ffmpeg -f v4l2 -input_format mjpeg -video_size 1280x720 -framerate 30 -i /dev/video0 -f alsa -channels 1 -i hw:3,0 -c:v libx264 -preset ultrafast -b:v 2500k -g 60 -c:a aac -b:a 128k -ac 1 -f mpegts "srt://IP_DA_VPS:8890?mode=caller&streamid=publish:irl"
